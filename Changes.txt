@@ -1,0 +1,45 @@
+Following are the list of updates/changes:-
+
+#1. update folder name from src/main/java to src/test/java becuase test automation script should be keep in test package, main packgae for applicaiton source folder.
+ 
+#2. Created proper tier framework for the automation, separate package for test, page objects, test data file, driver, initiator, base class etc- 
+	Structure is like that - 
+		-src/test/java
+			--com.automation.initiator
+			--com.automation.test
+			--com.automation.keywords
+			--com.automation.getpageobjects
+			--com.automation.utils
+			--com.automation.reports
+		-src/test/resorce
+			--PageObjectsRepository
+			--TestData
+			--Testngxml
+			--Selenium Driver
+			
+	>comcom.automation.initiator - this package contains classes to initialize test session
+	>com.automation.test - this is ultimate layer which contains tests
+	>com.automation.keywords - contains action classes for each test 
+	>com.automation.getpageobjects - contains base class for common methods
+	>com.automation.utils - contains utility classes
+	>com.automation.reports - contains methods for reporting and sending emailable report
+	
+	>PageObjectsRepository - contains all web elements in specs files
+	>TestData - contains test data
+	>testngxml - contains testng xml files 
+	
+#3. In original test suites all test classes are in default package so update into proper naming package
+
+#4. Used of methods in various class for code reusability
+
+#5. Avoid to use hard wait which slow the speed of execution
+
+#6. Used proper logging to track the follow of execution 
+
+#7. Used all web elements in specs file so if there is any change justchange in spec file no need to change in script
+
+#8. Used test data yml file for test data instead of hard coded in test file
+
+#9. Used web driver factory to initialise and quit driver
+
+#10. Added functionality to take screenshot if any failure
